@@ -1,0 +1,13 @@
+C:\Users\lagau\OneDrive\Documents\Git\C#\Simple_Calculator\bin\Debug\netcoreapp3.1\Simple_Calculator.exe
+C:\Users\lagau\OneDrive\Documents\Git\C#\Simple_Calculator\bin\Debug\netcoreapp3.1\Simple_Calculator.deps.json
+C:\Users\lagau\OneDrive\Documents\Git\C#\Simple_Calculator\bin\Debug\netcoreapp3.1\Simple_Calculator.runtimeconfig.json
+C:\Users\lagau\OneDrive\Documents\Git\C#\Simple_Calculator\bin\Debug\netcoreapp3.1\Simple_Calculator.runtimeconfig.dev.json
+C:\Users\lagau\OneDrive\Documents\Git\C#\Simple_Calculator\bin\Debug\netcoreapp3.1\Simple_Calculator.dll
+C:\Users\lagau\OneDrive\Documents\Git\C#\Simple_Calculator\bin\Debug\netcoreapp3.1\Simple_Calculator.pdb
+C:\Users\lagau\OneDrive\Documents\Git\C#\Simple_Calculator\obj\Debug\netcoreapp3.1\Simple_Calculator.csprojAssemblyReference.cache
+C:\Users\lagau\OneDrive\Documents\Git\C#\Simple_Calculator\obj\Debug\netcoreapp3.1\Simple_Calculator.csproj.CoreCompileInputs.cache
+C:\Users\lagau\OneDrive\Documents\Git\C#\Simple_Calculator\obj\Debug\netcoreapp3.1\Simple_Calculator.AssemblyInfoInputs.cache
+C:\Users\lagau\OneDrive\Documents\Git\C#\Simple_Calculator\obj\Debug\netcoreapp3.1\Simple_Calculator.AssemblyInfo.cs
+C:\Users\lagau\OneDrive\Documents\Git\C#\Simple_Calculator\obj\Debug\netcoreapp3.1\Simple_Calculator.dll
+C:\Users\lagau\OneDrive\Documents\Git\C#\Simple_Calculator\obj\Debug\netcoreapp3.1\Simple_Calculator.pdb
+C:\Users\lagau\OneDrive\Documents\Git\C#\Simple_Calculator\obj\Debug\netcoreapp3.1\Simple_Calculator.genruntimeconfig.cache
