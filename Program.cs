@@ -61,8 +61,8 @@ namespace Simple_Calculator
 
     class UserInput : Arithmatic
     {
-        int num1;
-        int num2;
+        public int num1;
+        public int num2;
     }
 
     class Program
@@ -73,10 +73,17 @@ namespace Simple_Calculator
             Subtraction subtract = new Subtraction();
             Multiplication multiply = new Multiplication();
             Division divide = new Division();
+            UserInput ui = new UserInput();
 
             Console.WriteLine("Welcome to Simple Calculator.");
 
+            Console.WriteLine("Please input your first whole number:");
+            ui.num1 = Convert.ToInt32(Console.ReadLine());
 
+            Console.WriteLine("Please input your second whole number:");
+            ui.num2 = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine("user choices: {0}, {1}", ui.num1, ui.num2);
             Console.WriteLine("{0} {1}", add.AnswerStatement(),add.Adder(5,5));
             Console.WriteLine("{0} {1}", subtract.AnswerStatement(), subtract.Subtracter(5, 5));
             Console.WriteLine("{0} {1}", multiply.AnswerStatement(), multiply.Multiplier(5, 5));
