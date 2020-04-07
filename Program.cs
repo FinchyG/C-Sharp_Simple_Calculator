@@ -4,7 +4,10 @@ namespace Simple_Calculator
 {
     abstract class Arithmatic
     {
-                
+        public string AnswerStatement(string resultName)
+        {
+            return $"The {resultName} of the two numbers is:";
+        }                
     }
 
     class Addition : Arithmatic
@@ -12,10 +15,6 @@ namespace Simple_Calculator
         public int Adder(int x, int y)
         {
             return x + y;
-        }
-        public string AnswerStatement()
-        {
-            return "The sum of the two numbers is:";
         }
 
     }
@@ -26,11 +25,7 @@ namespace Simple_Calculator
         {
             return x - y;
         }
-        public string AnswerStatement()
-        {
-            return "The difference of the two numbers is:";
-        }
-
+        
     }
 
     class Multiplication : Arithmatic
@@ -39,11 +34,7 @@ namespace Simple_Calculator
         {
             return x * y;
         }
-        public string AnswerStatement()
-        {
-            return "The product of the two numbers is:";
-        }
-
+       
     }
 
     class Division : Arithmatic
@@ -52,11 +43,7 @@ namespace Simple_Calculator
         {
             return x / y;
         }
-        public string AnswerStatement()
-        {
-            return "The quotient of the two numbers is:";
-        }
-
+        
     }
 
     class UserInput : Arithmatic
@@ -83,10 +70,10 @@ namespace Simple_Calculator
             Console.WriteLine("Please input your second whole number:");
             usip.num2 = Convert.ToInt32(Console.ReadLine());
 
-            Console.WriteLine("{0} {1}", add.AnswerStatement(),add.Adder(usip.num1, usip.num2));
-            Console.WriteLine("{0} {1}", subtract.AnswerStatement(), subtract.Subtracter(usip.num1, usip.num2));
-            Console.WriteLine("{0} {1}", multiply.AnswerStatement(), multiply.Multiplier(usip.num1, usip.num2));
-            Console.WriteLine("{0} {1}", divide.AnswerStatement(), divide.Divider(usip.num1, usip.num2));
+            Console.WriteLine("{0} {1}", add.AnswerStatement("sum"),add.Adder(usip.num1, usip.num2));
+            Console.WriteLine("{0} {1}", subtract.AnswerStatement("difference"), subtract.Subtracter(usip.num1, usip.num2));
+            Console.WriteLine("{0} {1}", multiply.AnswerStatement("product"), multiply.Multiplier(usip.num1, usip.num2));
+            Console.WriteLine("{0} {1}", divide.AnswerStatement("quotient"), divide.Divider(usip.num1, usip.num2));
         }
     }
 }
