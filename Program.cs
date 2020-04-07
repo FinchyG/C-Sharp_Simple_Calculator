@@ -48,8 +48,23 @@ namespace Simple_Calculator
 
     class UserInput : Arithmatic
     {
+        public string userStr;
+        public int userNum;
         public int num1;
         public int num2;
+
+        public int NumberValidator(string userString)
+        {
+            while (!int.TryParse(userString, out int x))
+            {
+                Console.WriteLine("You must input a whole number:");
+                userString = Console.ReadLine();
+            }
+
+            userNum = Convert.ToInt32(userString);
+
+            return userNum;
+        }
     }
 
     class Program
@@ -65,10 +80,12 @@ namespace Simple_Calculator
             Console.WriteLine("Welcome to Simple Calculator.");
 
             Console.WriteLine("Please input your first whole number:");
-            usip.num1 = Convert.ToInt32(Console.ReadLine());
-
+            usip.userStr = Console.ReadLine();
+            usip.num1 = usip.NumberValidator(usip.userStr);
+            
             Console.WriteLine("Please input your second whole number:");
-            usip.num2 = Convert.ToInt32(Console.ReadLine());
+            usip.userStr = Console.ReadLine();
+            usip.num2 = usip.NumberValidator(usip.userStr);
 
             Console.WriteLine("{0} {1}", add.AnswerStatement("sum"),add.Adder(usip.num1, usip.num2));
             Console.WriteLine("{0} {1}", subtract.AnswerStatement("difference"), subtract.Subtracter(usip.num1, usip.num2));
