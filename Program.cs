@@ -109,10 +109,21 @@ namespace Simple_Calculator
             usip.userNumStr = Console.ReadLine();
             usip.num2 = usip.NumberValidator(usip.userNumStr);
 
-            Console.WriteLine("{0} {1}", add.AnswerStatement("sum"),add.Adder(usip.num1, usip.num2));
-            Console.WriteLine("{0} {1}", subtract.AnswerStatement("difference"), subtract.Subtracter(usip.num1, usip.num2));
-            Console.WriteLine("{0} {1}", multiply.AnswerStatement("product"), multiply.Multiplier(usip.num1, usip.num2));
-            Console.WriteLine("{0} {1}", divide.AnswerStatement("quotient"), divide.Divider(usip.num1, usip.num2));
+            switch (usip.validatedChoice)
+            {
+                case "a":
+                    Console.WriteLine("{0} {1}", add.AnswerStatement("sum"), add.Adder(usip.num1, usip.num2));
+                    break;
+                case "s":
+                    Console.WriteLine("{0} {1}", subtract.AnswerStatement("difference"), subtract.Subtracter(usip.num1, usip.num2));
+                    break;
+                case "m":
+                    Console.WriteLine("{0} {1}", multiply.AnswerStatement("product"), multiply.Multiplier(usip.num1, usip.num2));
+                    break;
+                case "d":
+                    Console.WriteLine("{0} {1}", divide.AnswerStatement("quotient"), divide.Divider(usip.num1, usip.num2));
+                    break;
+            }
         }
     }
 }
