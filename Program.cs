@@ -48,8 +48,10 @@ namespace Simple_Calculator
 
     class UserInput : Arithmatic
     {
-        public string userStr;
-        public int userNum;
+        public string choice;
+        public string validatedChoice;
+        public string userNumStr;
+        public int userNumInt;
         public int num1;
         public int num2;
 
@@ -61,9 +63,24 @@ namespace Simple_Calculator
                 userString = Console.ReadLine();
             }
 
-            userNum = Convert.ToInt32(userString);
+            userNumInt = Convert.ToInt32(userString);
 
-            return userNum;
+            return userNumInt;
+
+        }
+
+        public string choiceValidator(string choice)
+        {
+            while (!(choice == "a" | choice == "s" | choice == "m" | choice == "d"))
+            {
+                Console.WriteLine("You must choose either add(a), subtract(s), multiply(m) or divide(d):");
+                choice = Console.ReadLine();
+            }
+
+            validatedChoice = choice;
+
+            return validatedChoice;
+
         }
     }
 
@@ -79,13 +96,18 @@ namespace Simple_Calculator
 
             Console.WriteLine("Welcome to Simple Calculator.");
 
+            Console.WriteLine("Do you want to add(a), subtract(s), multiply(m) or divide(d)?");
+            usip.choice = Console.ReadLine();
+            usip.validatedChoice = usip.choiceValidator(usip.choice);
+            Console.WriteLine(usip.validatedChoice);
+
             Console.WriteLine("Please input your first whole number:");
-            usip.userStr = Console.ReadLine();
-            usip.num1 = usip.NumberValidator(usip.userStr);
+            usip.userNumStr = Console.ReadLine();
+            usip.num1 = usip.NumberValidator(usip.userNumStr);
             
             Console.WriteLine("Please input your second whole number:");
-            usip.userStr = Console.ReadLine();
-            usip.num2 = usip.NumberValidator(usip.userStr);
+            usip.userNumStr = Console.ReadLine();
+            usip.num2 = usip.NumberValidator(usip.userNumStr);
 
             Console.WriteLine("{0} {1}", add.AnswerStatement("sum"),add.Adder(usip.num1, usip.num2));
             Console.WriteLine("{0} {1}", subtract.AnswerStatement("difference"), subtract.Subtracter(usip.num1, usip.num2));
