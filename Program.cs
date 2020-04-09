@@ -9,14 +9,13 @@ namespace Simple_Calculator
             return $"The {resultName} of the two numbers is:";
         }                
     }
-
+    
     class Addition : Arithmatic
     {
         public int Adder(int x, int y)
         {
             return x + y;
         }
-
     }
 
     class Subtraction : Arithmatic
@@ -25,8 +24,7 @@ namespace Simple_Calculator
         {
             return x - y;
         }
-        
-    }
+     }
 
     class Multiplication : Arithmatic
     {
@@ -34,7 +32,6 @@ namespace Simple_Calculator
         {
             return x * y;
         }
-       
     }
 
     class Division : Arithmatic
@@ -43,13 +40,12 @@ namespace Simple_Calculator
         {
             return x / y;
         }
-        
     }
 
     class UserInput : Arithmatic
     {
-        public string choice;
-        public string validatedChoice;
+        public string calculationChoice;
+        public string validatedCalculationChoice;
         public string userNumStr;
         public int userNumInt;
         public int num1;
@@ -63,13 +59,10 @@ namespace Simple_Calculator
                 userString = Console.ReadLine();
             }
 
-            userNumInt = Convert.ToInt32(userString);
-
-            return userNumInt;
-
+            return userNumInt = Convert.ToInt32(userString);
         }
 
-        public string choiceValidator(string choice)
+        public string ChoiceValidator(string choice)
         {
             while (!(choice == "a" | choice == "s" | choice == "m" | choice == "d"))
             {
@@ -77,10 +70,7 @@ namespace Simple_Calculator
                 choice = Console.ReadLine();
             }
 
-            validatedChoice = choice;
-
-            return validatedChoice;
-
+            return validatedCalculationChoice = choice;
         }
     }
 
@@ -101,9 +91,9 @@ namespace Simple_Calculator
             while(!endProgram)
             {
                 Console.WriteLine("Do you want to add(a), subtract(s), multiply(m) or divide(d)?");
-                usip.choice = Console.ReadLine();
-                usip.validatedChoice = usip.choiceValidator(usip.choice);
-                Console.WriteLine(usip.validatedChoice);
+                usip.calculationChoice = Console.ReadLine();
+                usip.validatedCalculationChoice = usip.ChoiceValidator(usip.calculationChoice);
+                Console.WriteLine(usip.validatedCalculationChoice);
 
                 Console.WriteLine("Please input your first whole number:");
                 usip.userNumStr = Console.ReadLine();
@@ -113,7 +103,7 @@ namespace Simple_Calculator
                 usip.userNumStr = Console.ReadLine();
                 usip.num2 = usip.NumberValidator(usip.userNumStr);
 
-                switch (usip.validatedChoice)
+                switch (usip.validatedCalculationChoice)
                 {
                     case "a":
                         Console.WriteLine("{0} {1}", add.AnswerStatement("sum"), add.Adder(usip.num1, usip.num2));
@@ -125,7 +115,7 @@ namespace Simple_Calculator
                         Console.WriteLine("{0} {1}", multiply.AnswerStatement("product"), multiply.Multiplier(usip.num1, usip.num2));
                         break;
                     case "d":
-                        Console.WriteLine("{0} {1}", divide.AnswerStatement("quotient"), divide.Divider(usip.num1, usip.num2));
+                        Console.WriteLine("{0} {1}", divide.AnswerStatement("quotient (rounded to nearest whole number)"), divide.Divider(usip.num1, usip.num2));
                         break;
                 }
 
@@ -137,8 +127,6 @@ namespace Simple_Calculator
                     endProgram = true;
                 }
             }
-
-            
         }
     }
 }
