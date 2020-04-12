@@ -12,7 +12,7 @@ namespace Simple_Calculator
     
     class Addition : Arithmatic
     {
-        public int Adder(int x, int y)
+        public decimal Adder(decimal x, decimal y)
         {
             return x + y;
         }
@@ -20,7 +20,7 @@ namespace Simple_Calculator
 
     class Subtraction : Arithmatic
     {
-        public int Subtracter(int x, int y)
+        public decimal Subtracter(decimal x, decimal y)
         {
             return x - y;
         }
@@ -28,7 +28,7 @@ namespace Simple_Calculator
 
     class Multiplication : Arithmatic
     {
-        public int Multiplier(int x, int y)
+        public decimal Multiplier(decimal x, decimal y)
         {
             return x * y;
         }
@@ -36,9 +36,9 @@ namespace Simple_Calculator
 
     class Division : Arithmatic
     {
-        public int Divider(int x, int y)
+        public decimal Divider(decimal x, decimal y)
         {
-            return x / y;
+            return Math.Round(x / y,2);
         }
     }
 
@@ -47,19 +47,19 @@ namespace Simple_Calculator
         public string calculationChoice;
         public string validatedCalculationChoice;
         public string userNumStr;
-        public int userNumInt;
-        public int num1;
-        public int num2;
+        public decimal userNumdecimal;
+        public decimal num1;
+        public decimal num2;
 
-        public int NumberValidator(string userString)
+        public decimal NumberValidator(string userString)
         {
-            while (!int.TryParse(userString, out int x))
+            while (!decimal.TryParse(userString, out decimal x))
             {
                 Console.WriteLine("You must input a whole number:");
                 userString = Console.ReadLine();
             }
 
-            return userNumInt = Convert.ToInt32(userString);
+            return userNumdecimal = Convert.ToDecimal(userString);
         }
 
         public string ChoiceValidator(string choice)
@@ -115,7 +115,8 @@ namespace Simple_Calculator
                         Console.WriteLine("{0} {1}", multiply.AnswerStatement("product"), multiply.Multiplier(usip.num1, usip.num2));
                         break;
                     case "d":
-                        Console.WriteLine("{0} {1}", divide.AnswerStatement("quotient (rounded to nearest whole number)"), divide.Divider(usip.num1, usip.num2));
+                        Console.WriteLine("{0} {1}", divide.AnswerStatement("quotient (rounded to two decimal places"),
+                                            divide.Divider(usip.num1, usip.num2));
                         break;
                 }
 
