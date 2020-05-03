@@ -1,72 +1,9 @@
 ﻿using System;
 using Arithmatic;
 
+
 namespace Simple_Calculator
 {
-    class Addition : Arithmatic.Arithmatic
-    {
-        public decimal Adder(decimal x, decimal y)
-        {
-            return x + y;
-        }
-    }
-
-    class Subtraction : Arithmatic.Arithmatic
-    {
-        public decimal Subtracter(decimal x, decimal y)
-        {
-            return x - y;
-        }
-     }
-
-    class Multiplication : Arithmatic.Arithmatic
-    {
-        public decimal Multiplier(decimal x, decimal y)
-        {
-            return x * y;
-        }
-    }
-
-    class Division : Arithmatic.Arithmatic
-    {
-        public decimal Divider(decimal x, decimal y)
-        {
-            return Math.Round(x / y,2);
-        }
-    }
-
-    class UserInput : Arithmatic.Arithmatic
-    {
-        public string calculationChoice;
-        public string validatedCalculationChoice;
-        public string userNumStr;
-        public decimal userNumdecimal;
-        public decimal num1;
-        public decimal num2;
-
-        public decimal NumberValidator(string userString)
-        {
-            while (!decimal.TryParse(userString, out decimal x))
-            {
-                Console.WriteLine("You must input a whole number:");
-                userString = Console.ReadLine();
-            }
-
-            return userNumdecimal = Convert.ToDecimal(userString);
-        }
-
-        public string ChoiceValidator(string choice)
-        {
-            while (!(choice == "a" | choice == "s" | choice == "m" | choice == "d"))
-            {
-                Console.WriteLine("You must choose either add(a), subtract(s), multiply(m) or divide(d):");
-                choice = Console.ReadLine();
-            }
-
-            return validatedCalculationChoice = choice;
-        }
-    }
-
     class Program
     {
         static void Main(string[] args)
@@ -84,7 +21,7 @@ namespace Simple_Calculator
             while(!endProgram)
             {
                 Console.WriteLine("Do you want to add(a), subtract(s), multiply(m) or divide(d)?");
-                usip.calculationChoice = Console.ReadLine();
+                usip.calculationChoice = Console.ReadLine().ToLower();
                 usip.validatedCalculationChoice = usip.ChoiceValidator(usip.calculationChoice);
                 Console.WriteLine(usip.validatedCalculationChoice);
 
@@ -114,7 +51,7 @@ namespace Simple_Calculator
                 }
 
                 Console.WriteLine("Press q to quit program or any other key to do another calculation:");
-                string keyPress = Console.ReadLine();
+                string keyPress = Console.ReadLine().ToLower();
 
                 if(keyPress == "q")
                 {
