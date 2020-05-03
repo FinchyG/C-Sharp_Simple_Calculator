@@ -3,12 +3,12 @@ using Arithmatic;
 
 class UserInput : Arithmatic.Arithmatic
 {
-    public string calculationChoice;
-    public string validatedCalculationChoice;
-    public string userNumStr;
-    public decimal userNumdecimal;
-    public decimal num1;
-    public decimal num2;
+    public string calculationChoice { get; set; }
+    public string validatedCalculationChoice { get; set; }
+    public string userNumStr { get; set; }
+    public decimal userNumdecimal { get; set; }
+    public decimal num1 { get; set; }
+    public decimal num2 { get; set; }
 
     public decimal NumberValidator(string userString)
     {
@@ -23,7 +23,8 @@ class UserInput : Arithmatic.Arithmatic
 
     public string ChoiceValidator(string choice)
     {
-        
+        choice = choice.ToLower();
+
         while (!(choice == "a" | choice == "s" | choice == "m" | choice == "d"))
         {
             Console.WriteLine("You must choose either add(a), subtract(s), multiply(m) or divide(d):");

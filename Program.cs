@@ -21,7 +21,7 @@ namespace Simple_Calculator
             while(!endProgram)
             {
                 Console.WriteLine("Do you want to add(a), subtract(s), multiply(m) or divide(d)?");
-                usip.calculationChoice = Console.ReadLine().ToLower();
+                usip.calculationChoice = Console.ReadLine();
                 usip.validatedCalculationChoice = usip.ChoiceValidator(usip.calculationChoice);
                 Console.WriteLine(usip.validatedCalculationChoice);
 
