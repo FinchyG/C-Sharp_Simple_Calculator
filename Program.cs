@@ -1,16 +1,9 @@
 ﻿using System;
+using Arithmatic;
 
 namespace Simple_Calculator
 {
-    abstract class Arithmatic
-    {
-        public string AnswerStatement(string resultName)
-        {
-            return $"The {resultName} of the two numbers is:";
-        }                
-    }
-    
-    class Addition : Arithmatic
+    class Addition : Arithmatic.Arithmatic
     {
         public decimal Adder(decimal x, decimal y)
         {
@@ -18,7 +11,7 @@ namespace Simple_Calculator
         }
     }
 
-    class Subtraction : Arithmatic
+    class Subtraction : Arithmatic.Arithmatic
     {
         public decimal Subtracter(decimal x, decimal y)
         {
@@ -26,7 +19,7 @@ namespace Simple_Calculator
         }
      }
 
-    class Multiplication : Arithmatic
+    class Multiplication : Arithmatic.Arithmatic
     {
         public decimal Multiplier(decimal x, decimal y)
         {
@@ -34,7 +27,7 @@ namespace Simple_Calculator
         }
     }
 
-    class Division : Arithmatic
+    class Division : Arithmatic.Arithmatic
     {
         public decimal Divider(decimal x, decimal y)
         {
@@ -42,7 +35,7 @@ namespace Simple_Calculator
         }
     }
 
-    class UserInput : Arithmatic
+    class UserInput : Arithmatic.Arithmatic
     {
         public string calculationChoice;
         public string validatedCalculationChoice;
