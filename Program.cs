@@ -12,7 +12,7 @@ namespace Simple_Calculator
             Subtraction subtract = new Subtraction();
             Multiplication multiply = new Multiplication();
             Division divide = new Division();
-            UserInput usip = new UserInput();
+            UserInputProperties usip = new UserInputProperties();
 
             Console.WriteLine("Welcome to Simple Calculator.");
 
@@ -36,16 +36,16 @@ namespace Simple_Calculator
                 switch (usip.validatedCalculationChoice)
                 {
                     case "a":
-                        Console.WriteLine("{0} {1}", add.AnswerStatement("sum"), add.Adder(usip.num1, usip.num2));
+                        Console.WriteLine("{0} {1}.", add.AnswerStatement("sum"), add.Adder(usip.num1, usip.num2));
                         break;
                     case "s":
-                        Console.WriteLine("{0} {1}", subtract.AnswerStatement("difference"), subtract.Subtracter(usip.num1, usip.num2));
+                        Console.WriteLine("{0} {1}.", subtract.AnswerStatement("difference"), subtract.Subtracter(usip.num1, usip.num2));
                         break;
                     case "m":
-                        Console.WriteLine("{0} {1}", multiply.AnswerStatement("product"), multiply.Multiplier(usip.num1, usip.num2));
+                        Console.WriteLine("{0} {1}.", multiply.AnswerStatement("product"), multiply.Multiplier(usip.num1, usip.num2));
                         break;
                     case "d":
-                        Console.WriteLine("{0} {1}", divide.AnswerStatement("quotient (rounded to two decimal places"),
+                        Console.WriteLine("{0} {1}.", divide.AnswerStatement("quotient (rounded to two decimal places)"),
                                             divide.Divider(usip.num1, usip.num2));
                         break;
                 }
